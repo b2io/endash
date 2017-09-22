@@ -22,6 +22,7 @@
     "test": "cross-env BABEL_ENV=cjs jest --coverage",
     "test:watch": "cross-env BABEL_ENV=cjs jest --watch"
   },
+  "dependencies": {},
   "peerDependencies": {
     "lodash": "^4.17.4"
   },
@@ -43,6 +44,7 @@
     "prettier": "^1.2.2",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-babel-minify": "^3.1.2",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-filesize": "^1.4.2",
     "rollup-plugin-node-resolve": "^3.0.0",
@@ -56,9 +58,6 @@
     "coverageReporters": [
       "text-summary",
       "lcov"
-    ],
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!lodash-es)"
     ]
   }
 }

@@ -1,13 +1,23 @@
+import camelCase from 'lodash/camelCase';
 import babel from 'rollup-plugin-babel';
+import babelMinify from 'rollup-plugin-babel-minify';
 import commonjs from 'rollup-plugin-commonjs';
 import filesize from 'rollup-plugin-filesize';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
-import camelCase from 'lodash/camelCase';
 
-const EXTERNALS = ['lodash/fp/curry', 'lodash/fp/flatMap', 'lodash/fp/isNil'];
+const EXTERNALS = [
+  'lodash/fp/cond',
+  'lodash/fp/curry',
+  'lodash/fp/flatMap',
+  'lodash/fp/has',
+  'lodash/fp/isFunction',
+  'lodash/fp/isNil',
+  'lodash/fp/take',
+  'lodash/fp/takeRight',
+];
 const LODASH_MATCH = /^lodash(?:\/fp)?\/([a-z]+)/i;
 
 const lodashMethodName = id => id.match(LODASH_MATCH)[1];
@@ -58,6 +68,7 @@ export default [
       babel({
         exclude: ['node_modules/**'],
       }),
+      babelMinify(),
       filesize(),
     ],
   },

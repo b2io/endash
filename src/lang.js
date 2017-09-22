@@ -1,6 +1,7 @@
 import { isNil } from 'lodash/fp';
 
+const isDefined = v => v !== undefined;
+
 const isPresent = v => !isNil(v);
 
-// eslint-disable-next-line import/prefer-default-export
-export { isPresent };
+export { isDefined, isPresent };
