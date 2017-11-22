@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+before_script:
+  - "npm i -g codeclimate-test-reporter"
+script:
+  - npm test
+after_script:
+  - "CODECLIMATE_REPO_TOKEN=edc470868eabef4bb2f27c5f20ebb596f9d08b6cd2ad9bd4af5b794494b083e4 codeclimate-test-reporter < coverage/lcov.info"
+  - "cat ./coverage/lcov.info | $(npm bin)/codecov"
