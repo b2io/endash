@@ -162,7 +162,7 @@ hasAll(['a', 'b', 'z'], obj); // false
 
 ### `renameKeys()`
 
-> `renameKeys(pairs: [string, string], obj: Object): Object
+> `renameKeys(pairs: [string, string], obj: Object): Object`
 
 Renames the keys of an object according to the key-pairs (`[prevKey, nextKey]`).
 
